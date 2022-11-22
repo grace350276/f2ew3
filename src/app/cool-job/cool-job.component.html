@@ -1,1 +1,31 @@
-<p>cool-job works!</p>
+
+<div class="middle-line"></div>
+<h1>cool-job works!</h1>
+
+<div class="coolJob-container">
+    <h2>To do</h2>
+  
+    <div
+      cdkDropList
+      #todoList="cdkDropList"
+      [cdkDropListData]="todo"
+      [cdkDropListConnectedTo]="[doneList]"
+      class="coolJob-list"
+      (cdkDropListDropped)="drop($event)">
+      <div class="coolJob-box" *ngFor="let item of todo" cdkDrag>{{item}}</div>
+    </div>
+  </div>
+  
+  <div class="coolJob-container">
+    <h2>Done</h2>
+  
+    <div
+      cdkDropList
+      #doneList="cdkDropList"
+      [cdkDropListData]="done"
+      [cdkDropListConnectedTo]="[todoList]"
+      class="coolJob-list"
+      (cdkDropListDropped)="drop($event)">
+      <div class="coolJob-box" *ngFor="let item of done" cdkDrag>{{item}}</div>
+    </div>
+  </div>
