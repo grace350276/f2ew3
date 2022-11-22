@@ -7,12 +7,14 @@ import { AppComponent } from './app.component';
 import { CdkDragDropConnectedSortingExampleCompComponent } from './cdk-drag-drop-connected-sorting-example/cdk-drag-drop-connected-sorting-example.component';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { CoolJobComponent } from './cool-job/cool-job.component';
+import { SimpleDragComponent } from './simple-drag/simple-drag.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CdkDragDropConnectedSortingExampleCompComponent,
-    CoolJobComponent
+    CoolJobComponent,
+    SimpleDragComponent
 
   ],
   imports: [
