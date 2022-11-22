@@ -13,6 +13,14 @@
   border-radius: 4px;
   overflow: hidden;
   display: block;
+
+  &.cdk-drop-list-dragging {
+    .example-box {
+      &:not(.cdk-drag-placeholder) {
+        transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+      }
+    }
+  }
 }
 
 .example-box {
@@ -27,6 +35,10 @@
   cursor: move;
   background: white;
   font-size: 14px;
+
+  &:last-child {
+    border: none;
+  }
 }
 
 .cdk-drag-preview {
@@ -42,13 +54,5 @@
 }
 
 .cdk-drag-animating {
-  transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
-}
-
-.example-box:last-child {
-  border: none;
-}
-
-.example-list.cdk-drop-list-dragging .example-box:not(.cdk-drag-placeholder) {
   transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
 }
