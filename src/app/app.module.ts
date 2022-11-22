@@ -3,18 +3,20 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { CdkDragDropConnectedSortingExampleComponent } from './cdk-drag-drop-connected-sorting-example/cdk-drag-drop-connected-sorting-example.component';
+import { CdkDragDropConnectedSortingExample } from './cdk-drag-drop-connected-sorting-example/cdk-drag-drop-connected-sorting-example.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {  DragDropModule } from '@angular/cdk/drag-drop';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CdkDragDropConnectedSortingExampleComponent
+    CdkDragDropConnectedSortingExample
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    DragDropModule
   ],
   providers: [],
   bootstrap: [AppComponent]
