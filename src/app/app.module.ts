@@ -6,11 +6,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CdkDragDropConnectedSortingExampleCompComponent } from './cdk-drag-drop-connected-sorting-example/cdk-drag-drop-connected-sorting-example.component';
 import { DragDropModule } from '@angular/cdk/drag-drop';
+import { CoolJobComponent } from './cool-job/cool-job.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CdkDragDropConnectedSortingExampleCompComponent
+    CdkDragDropConnectedSortingExampleCompComponent,
+    CoolJobComponent
 
   ],
   imports: [
