@@ -5,6 +5,7 @@
 
   <div
     cdkDropList
+    #todoList="cdkDropList"
     [cdkDropListData]="todo"
     [cdkDropListConnectedTo]="[doneList]"
     class="example-list"
@@ -21,7 +22,7 @@
     cdkDropList
     #doneList="cdkDropList"
     [cdkDropListData]="done"
-    [cdkDropListConnectedTo]="[doneList]"
+    [cdkDropListConnectedTo]="[todoList]"
     class="example-list"
     (cdkDropListDropped)="drop($event)"
   >
