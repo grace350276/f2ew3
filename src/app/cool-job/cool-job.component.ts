@@ -6,11 +6,14 @@ import {CdkDragDrop, moveItemInArray, transferArrayItem} from '@angular/cdk/drag
   templateUrl: './cool-job.component.html',
   styleUrls: ['./cool-job.component.scss']
 })
+
 export class CoolJobComponent {
 
-  todo = ['Get to work', 'Pick up groceries', 'Go home', 'Fall asleep'];
+  one = ['Get to work', 'Pick up groceries', 'Go home', 'Fall asleep'];
 
-  done = ['Get up', 'Brush teeth', 'Take a shower', 'Check e-mail', 'Walk dog'];
+  two = ['Get up', 'Brush teeth', 'Take a shower', 'Check e-mail', 'Walk dog'];
+
+  three = ['Get up', 'Brush teeth', 'Take a shower', 'Check e-mail', 'Walk dog'];
 
   drop(event: CdkDragDrop<string[]>) {
     if (event.previousContainer === event.container) {
@@ -25,6 +28,5 @@ export class CoolJobComponent {
     }
   }
 
+
 }
-
-

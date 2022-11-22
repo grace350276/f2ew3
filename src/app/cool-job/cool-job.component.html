@@ -3,29 +3,49 @@
 <h1>cool-job works!</h1>
 
 <div class="coolJob-container">
-    <h2>To do</h2>
+    <h2>一</h2>
   
     <div
       cdkDropList
-      #todoList="cdkDropList"
-      [cdkDropListData]="todo"
-      [cdkDropListConnectedTo]="[doneList]"
+      #oneList="cdkDropList"
+      [cdkDropListData]="one"
+      [cdkDropListConnectedTo]="[threeList,twoList]"
+
       class="coolJob-list"
       (cdkDropListDropped)="drop($event)">
-      <div class="coolJob-box" *ngFor="let item of todo" cdkDrag>{{item}}</div>
+      <div class="coolJob-box" *ngFor="let item of one" cdkDrag>{{item}}</div>
     </div>
   </div>
   
-  <div class="coolJob-container">
-    <h2>Done</h2>
-  
+<div class="coolJob-container">
+<h2>二</h2>
+
+<div
+    cdkDropList
+    #twoList="cdkDropList"
+    [cdkDropListData]="two"
+    [cdkDropListConnectedTo]="[oneList,threeList]"
+    class="coolJob-list"
+    (cdkDropListDropped)="drop($event)">
+    <div class="coolJob-box" *ngFor="let item of two" cdkDrag>{{item}}</div>
+</div>
+</div>
+
+<div class="coolJob-container">
+    <h2>三</h2>
+    
     <div
-      cdkDropList
-      #doneList="cdkDropList"
-      [cdkDropListData]="done"
-      [cdkDropListConnectedTo]="[todoList]"
-      class="coolJob-list"
-      (cdkDropListDropped)="drop($event)">
-      <div class="coolJob-box" *ngFor="let item of done" cdkDrag>{{item}}</div>
+        cdkDropList
+        #threeList="cdkDropList"
+        [cdkDropListData]="three"
+        [cdkDropListConnectedTo]="[oneList,twoList]" 
+        
+
+        
+        class="coolJob-list"
+        (cdkDropListDropped)="drop($event)">
+        <div class="coolJob-box" *ngFor="let item of three" cdkDrag>{{item}}</div>
     </div>
-  </div>
+    </div>
+
+  
