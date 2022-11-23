@@ -3,14 +3,29 @@
 <h1>cool-job works!</h1>
 
 <div class="coolJob-container">
+  <h2>ALL</h2>
+  
+  <div
+      cdkDropList
+      #AllInList="cdkDropList"
+      [cdkDropListData]="AllIn"
+      [cdkDropListConnectedTo]="[oneList,twoList]" 
+      class="coolJob-list"
+      (cdkDropListDropped)="drop($event)">
+      <div class="coolJob-box" *ngFor="let item of AllIn" cdkDrag>{{item}}</div>
+  </div>
+  </div>
+
+
+<div class="coolJob-container">
     <h2>一</h2>
   
     <div
       cdkDropList
       #oneList="cdkDropList"
       [cdkDropListData]="one"
-      [cdkDropListConnectedTo]="[threeList,twoList]"
-      [cdkDropListEnterPredicate]="todoPredicate"
+      [cdkDropListConnectedTo]="[AllInList,twoList]"
+      [cdkDropListEnterPredicate]="OnePredicate"
 
       class="coolJob-list"
       (cdkDropListDropped)="drop($event)">
@@ -25,28 +40,14 @@
     cdkDropList
     #twoList="cdkDropList"
     [cdkDropListData]="two"
-    [cdkDropListConnectedTo]="[oneList,threeList]"
+    [cdkDropListConnectedTo]="[oneList,AllInList]"
+    [cdkDropListEnterPredicate]="TwoPredicate"
+
     class="coolJob-list"
     (cdkDropListDropped)="drop($event)">
     <div class="coolJob-box" *ngFor="let item of two" cdkDrag>{{item}}</div>
 </div>
 </div>
 
-<div class="coolJob-container">
-    <h2>三</h2>
-    
-    <div
-        cdkDropList
-        #threeList="cdkDropList"
-        [cdkDropListData]="three"
-        [cdkDropListConnectedTo]="[oneList,twoList]" 
-        
-
-        
-        class="coolJob-list"
-        (cdkDropListDropped)="drop($event)">
-        <div class="coolJob-box" *ngFor="let item of three" cdkDrag>{{item}}</div>
-    </div>
-    </div>
 
   

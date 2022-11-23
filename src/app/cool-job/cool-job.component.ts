@@ -9,19 +9,29 @@ import {CdkDragDrop, moveItemInArray, transferArrayItem} from '@angular/cdk/drag
 
 export class CoolJobComponent {
 
-  get isTodoAvailable(): boolean {
-    return this.one && this.one.length < 5;
+  get isOneAvailable(): boolean {
+    return this.one && this.one.length < 1;
 }
 
-  todoPredicate = (): boolean => {
-    return this.isTodoAvailable;
+  OnePredicate = (): boolean => {
+    return this.isOneAvailable;
 }
 
-  one = ['Get to work', 'Pick up groceries', 'Go home', 'Fall asleep'];
+get isTwoAvailable(): boolean {
+  return this.two && this.two.length < 1;
+}
 
-  two = ['Get up', 'Brush teeth', 'Take a shower', 'Check e-mail', 'Walk dog'];
+TwoPredicate = (): boolean => {
+  return this.isTwoAvailable;
+}
 
-  three = ['Get up', 'Brush teeth', 'Take a shower', 'Check e-mail', 'Walk dog'];
+AllIn:string[] = ['A', 'B'];
+
+  one:string[] = [];
+
+  two:string[] = [];
+
+
 
   drop(event: CdkDragDrop<string[]>) {
     if (event.previousContainer === event.container) {
