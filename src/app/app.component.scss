@@ -1,0 +1,37 @@
+$font: "M PLUS Rounded 1c", sans-serif;
+
+header {
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(2px);
+}
+.icon_text {
+  font-family: $font;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 40px;
+  letter-spacing: 0em;
+  text-align: left;
+  margin-bottom: 0;
+  color: #59597c;
+}
+
+.step2_testArea {
+  background: rgba(255, 255, 255, 0.8);
+  box-shadow: 0px 15px 25px rgba(45, 156, 219, 0.16);
+  border-radius: 8px;
+  p:nth-child(1) {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 32px;
+    font-family: "Noto Sans TC";
+    color: #59597c;
+  }
+
+  p:nth-child(2) {
+    font-family: "Noto Sans TC";
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 28px;
+    color: #59597c;
+  }
+}
