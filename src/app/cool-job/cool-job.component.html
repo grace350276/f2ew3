@@ -10,6 +10,7 @@
       #oneList="cdkDropList"
       [cdkDropListData]="one"
       [cdkDropListConnectedTo]="[threeList,twoList]"
+      [cdkDropListEnterPredicate]="todoPredicate"
 
       class="coolJob-list"
       (cdkDropListDropped)="drop($event)">

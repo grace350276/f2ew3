@@ -9,6 +9,14 @@ import {CdkDragDrop, moveItemInArray, transferArrayItem} from '@angular/cdk/drag
 
 export class CoolJobComponent {
 
+  get isTodoAvailable(): boolean {
+    return this.one && this.one.length < 5;
+}
+
+  todoPredicate = (): boolean => {
+    return this.isTodoAvailable;
+}
+
   one = ['Get to work', 'Pick up groceries', 'Go home', 'Fall asleep'];
 
   two = ['Get up', 'Brush teeth', 'Take a shower', 'Check e-mail', 'Walk dog'];
