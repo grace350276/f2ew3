@@ -8,6 +8,7 @@ import { CdkDragDropConnectedSortingExampleCompComponent } from './cdk-drag-drop
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { CoolJobComponent } from './cool-job/cool-job.component';
 import { SimpleDragComponent } from './simple-drag/simple-drag.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { SimpleDragComponent } from './simple-drag/simple-drag.component';
     AppRoutingModule,
     BrowserAnimationsModule,
     DragDropModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
