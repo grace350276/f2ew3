@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {CdkDragDrop, moveItemInArray, transferArrayItem} from '@angular/cdk/drag-drop';
 
 @Component({
@@ -7,7 +7,12 @@ import {CdkDragDrop, moveItemInArray, transferArrayItem} from '@angular/cdk/drag
   styleUrls: ['./cool-job.component.scss']
 })
 
-export class CoolJobComponent {
+export class CoolJobComponent implements OnInit {
+
+  constructor() { }
+
+  ngOnInit(): void {
+  }
 
   get isOneAvailable(): boolean {
     return this.one && this.one.length < 1;
@@ -27,9 +32,11 @@ TwoPredicate = (): boolean => {
 
 AllIn:string[] = ['A', 'B'];
 
-  one:string[] = [];
+one:string[] = [];
 
-  two:string[] = [];
+two:string[] = [];
+
+
 
 
 
@@ -44,6 +51,19 @@ AllIn:string[] = ['A', 'B'];
         event.currentIndex,
       );
     }
+  }
+
+  visinfo(){
+
+
+    if(this.one[0]=="A"&&this.two[0]=="B"){
+      alert("true");
+
+    }else{
+  
+      alert("false");
+    }
+  
   }
 
 
