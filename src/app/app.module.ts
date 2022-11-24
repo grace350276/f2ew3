@@ -19,6 +19,8 @@ import { Page7TheEndComponent } from './page7-the-end/page7-the-end.component';
 import { OverlyTrueComponent } from './overly-true/overly-true.component';
 import { OverlyFalseComponent } from './overly-false/overly-false.component';
 import { HeaderComponent } from './header/header.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { CoverPageComponent } from './cover-page/cover-page.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +37,9 @@ import { HeaderComponent } from './header/header.component';
     Page7TheEndComponent,
     OverlyTrueComponent,
     OverlyFalseComponent,
-    HeaderComponent
+    HeaderComponent,
+    PageNotFoundComponent,
+    CoverPageComponent
 
   ],
   imports: [
