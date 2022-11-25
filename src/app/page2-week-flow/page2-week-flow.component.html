@@ -1,5 +1,121 @@
-<p>page2-week-flow works!</p>
-<button routerLink="/pd-backlog" class="btn-round" type="button">送出答案</button>
-<p>overly我後面再做先跳過</p>
+<div class="container">
+    <div class="step2_testArea mx-5 px-4 py-4 my-5">
+        <p class="mb-3">流程拼拼大風吹</p>
+        <p class="mb-5">
+            尊榮旅遊社即將推行線上下單業務，並採取 Scrum 開發模式，身為 Scrum Ｍaster 請協助為該公司第一個為期一週的 Sprint 安排流程～
+        </p>
 
 
+        <div class="week-wrap">
+
+
+            <div class="fttingArea ">
+                <p>Monday</p>
+
+                <div cdkDropList #oneList="cdkDropList" [cdkDropListData]="one"
+                    [cdkDropListConnectedTo]="[AllInList,twoList]" [cdkDropListEnterPredicate]="OnePredicate"
+                    class="coolJob-list " (cdkDropListDropped)="drop($event)">
+                    <div class="coolJob-box" *ngFor="let item of one" cdkDrag>
+                        <h3>{{item.title}}</h3>
+                        <p>{{item.content}}</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="fttingArea">
+                <p>Tuesday</p>
+
+                <div cdkDropList #twoList="cdkDropList" [cdkDropListData]="two"
+                    [cdkDropListConnectedTo]="[oneList,AllInList]" [cdkDropListEnterPredicate]="TwoPredicate"
+                    class="coolJob-list" (cdkDropListDropped)="drop($event)">
+                    <div class="coolJob-box" *ngFor="let item of two" cdkDrag> <h3>{{item.title}}</h3>
+                        <p>{{item.content}}</p></div>
+                </div>
+            </div>
+
+            <div class="fttingArea">
+                <p>Wednesday</p>
+
+                <div cdkDropList #twoList="cdkDropList" [cdkDropListData]="two"
+                    [cdkDropListConnectedTo]="[oneList,AllInList]" [cdkDropListEnterPredicate]="TwoPredicate"
+                    class="coolJob-list" (cdkDropListDropped)="drop($event)">
+                    <div class="coolJob-box" *ngFor="let item of two" cdkDrag> <h3>{{item.title}}</h3>
+                        <p>{{item.content}}</p></div>
+                </div>
+            </div>
+
+            <div class="fttingArea">
+                <p>Thursday</p>
+
+                <div cdkDropList #twoList="cdkDropList" [cdkDropListData]="two"
+                    [cdkDropListConnectedTo]="[oneList,AllInList]" [cdkDropListEnterPredicate]="TwoPredicate"
+                    class="coolJob-list" (cdkDropListDropped)="drop($event)">
+                    <div class="coolJob-box" *ngFor="let item of two" cdkDrag> <h3>{{item.title}}</h3>
+                        <p>{{item.content}}</p></div>
+                </div>
+            </div>
+            <div class="fttingArea">
+                <p>Friday</p> 
+
+                <div cdkDropList #twoList="cdkDropList" [cdkDropListData]="two"
+                    [cdkDropListConnectedTo]="[oneList,AllInList]" [cdkDropListEnterPredicate]="TwoPredicate"
+                    class="coolJob-list" (cdkDropListDropped)="drop($event)">
+                    <div class="coolJob-box" *ngFor="let item of two" cdkDrag> <h3>{{item.title}}</h3>
+                        <p>{{item.content}}</p></div>
+                </div>
+                <div cdkDropList #twoList="cdkDropList" [cdkDropListData]="two"
+                [cdkDropListConnectedTo]="[oneList,AllInList]" [cdkDropListEnterPredicate]="TwoPredicate"
+                class="coolJob-list" (cdkDropListDropped)="drop($event)">
+                <div class="coolJob-box" *ngFor="let item of two" cdkDrag> <h3>{{item.title}}</h3>
+                    <p>{{item.content}}</p></div>
+            </div>
+            </div>
+
+        </div>
+
+
+
+
+
+
+
+
+
+        <p class="mb-5">
+            請將下列會議按應該發生的順序拖曳至正確的時段～
+        </p>
+
+        <div class="coolJob-container ">
+            <h2>ALL</h2>
+
+            <div cdkDropList #AllInList="cdkDropList" [cdkDropListData]="AllIn"
+                [cdkDropListConnectedTo]="[oneList,twoList]" class="coolJob-list" (cdkDropListDropped)="drop($event)">
+                <div class="coolJob-box" *ngFor="let item of AllIn" cdkDrag>
+                    <h3>{{item.title}}</h3>
+                    <p>{{item.content}}</p>
+                    
+                    
+                    </div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+        <!-- 按鈕 -->
+        <div class="mb-3">
+            <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+                <button routerLink="/pd-backlog" type="button" class="btn btn-outline-secondary btn-lg px-4">
+                    送出答案
+                </button>
+                <button (click)="visinfo()" type="button" class="btn btn-outline-secondary btn-lg px-4">
+                    顯示
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
