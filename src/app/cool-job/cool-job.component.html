@@ -4,12 +4,12 @@
 
 <div class="coolJob-container">
   <h2>ALL</h2>
-  
+
   <div
       cdkDropList
       #AllInList="cdkDropList"
       [cdkDropListData]="AllIn"
-      [cdkDropListConnectedTo]="[oneList,twoList]" 
+      [cdkDropListConnectedTo]="[oneList,twoList]"
       class="coolJob-list"
       (cdkDropListDropped)="drop($event)">
       <div class="coolJob-box" *ngFor="let item of AllIn" cdkDrag>{{item}}</div>
@@ -19,7 +19,7 @@
 
 <div class="coolJob-container">
     <h2>一</h2>
-  
+
     <div
       cdkDropList
       #oneList="cdkDropList"
@@ -32,7 +32,7 @@
       <div class="coolJob-box" *ngFor="let item of one" cdkDrag>{{item}}</div>
     </div>
   </div>
-  
+
 <div class="coolJob-container">
 <h2>二</h2>
 
@@ -49,7 +49,13 @@
 </div>
 </div>
 
-<button (click)="visinfo()">顯示資料</button>
+<!-- <button (click)="onClick()" >顯示資料</button> -->
+<button (click)="visinfo()" >顯示資料</button>
 
-
-  
+<ng-template #tpl>
+  <p>123333333333</p>
+  <div class="modal">
+    <i class="modal__close" (click)="onClose()">X</i>
+    <div class="modal__container">HI 我是彈出視窗內容</div>
+  </div>
+</ng-template>
