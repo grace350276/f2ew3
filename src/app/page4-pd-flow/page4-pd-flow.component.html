@@ -1,4 +1,3 @@
-<p>page4-pd-flow works!</p>
 <div class="container">
     <div class="step2_testArea mx-5 px-4 py-4 my-5">
         <p class="mb-3">產品待辦清單排排看！</p>
@@ -8,28 +7,64 @@
         <div class="mb-3">
             <div class="row mb-5">
                 <div class="col-4 px-3 fttingArea">
-                    <div class="mb-4"></div>
-                    <div class="mb-4"></div>
-                    <div class=""></div>
+                    <!-- 這裡放選項 -->
+                    <div cdkDropList #oneList="cdkDropList" [cdkDropListData]="one"
+                        [cdkDropListConnectedTo]="[AllInList,oneList,twoList,threeList]"
+                        [cdkDropListEnterPredicate]="OnePredicate" class="coolJob-list optionArea"
+                        (cdkDropListDropped)="drop($event)">
+                        <div class="coolJob-box" *ngFor="let item of one" cdkDrag>
+                            <h3>{{item.title}}</h3>
+                            <p>{{item.content}}</p>
+                        </div>
+                    </div>
+
+                    <div cdkDropList #twoList="cdkDropList" [cdkDropListData]="two"
+                        [cdkDropListConnectedTo]="[AllInList,oneList,twoList,threeList]"
+                        [cdkDropListEnterPredicate]="TwoPredicate" class="coolJob-list optionArea"
+                        (cdkDropListDropped)="drop($event)">
+                        <div class="coolJob-box" *ngFor="let item of two" cdkDrag>
+                            <h3>{{item.title}}</h3>
+                            <p>{{item.content}}</p>
+                        </div>
+                    </div>
+
+                    <div cdkDropList #threeList="cdkDropList" [cdkDropListData]="three"
+                        [cdkDropListConnectedTo]="[AllInList,oneList,twoList,threeList]"
+                        [cdkDropListEnterPredicate]="ThreePredicate" class="coolJob-list optionArea"
+                        (cdkDropListDropped)="drop($event)">
+                        <div class="coolJob-box" *ngFor="let item of three" cdkDrag>
+                            <h3>{{item.title}}</h3>
+                            <p>{{item.content}}</p>
+                        </div>
+                    </div>
+
+
+
+
+
                 </div>
                 <div class="col-3 px-4 imgArea">
                     <p>最優先</p>
                     <img src="../assets/images/priority_arrow.svg" alt="" />
                 </div>
-                <div class="col-4 mt-5 optionArea">
-                    <div class="mb-4">
-                        <p>下單效能優化</p>
-                        <p>沒法下單就沒生意、真的超重要！！！</p>
-                    </div>
-                    <div class="mb-4">
-                        <p>後台訂單庫存整合</p>
-                        <p>現在查看房源庫存需要登入另一個系統 很花時間但尚可應付！</p>
-                    </div>
-                    <div class="">
-                        <p>會員訂單管理功能</p>
-                        <p>客服常常進線詢問訂單狀況 為提升服務效率，這功能有一點重要！</p>
+
+                <!-- 先搬過來看看 -->
+
+                <div cdkDropList #AllInList="cdkDropList" [cdkDropListData]="AllIn"
+                    [cdkDropListConnectedTo]="[oneList,twoList,threeList]" class="col-4 optionArea week-wrap item-group"
+                    (cdkDropListDropped)="drop($event)">
+                    <div class="coolJob-box" *ngFor="let item of AllIn" cdkDrag>
+                        <h3>{{item.title}}</h3>
+                        <p>{{item.content}}</p>
+
+
                     </div>
                 </div>
+
+
+
+
+
             </div>
             <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
                 <button routerLink="/retro" type="button" class="btn btn-outline-secondary btn-lg px-4">
@@ -39,5 +74,3 @@
         </div>
     </div>
 </div>
-
-
