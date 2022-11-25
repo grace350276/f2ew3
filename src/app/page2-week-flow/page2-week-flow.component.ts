@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {CdkDragDrop, moveItemInArray, transferArrayItem} from '@angular/cdk/drag-drop';
+import { GAME1 } from '../shared/page2game';
+import { IGame1 } from '../shared/IPage2game';
 
 @Component({
   selector: 'app-page2-week-flow',
@@ -29,17 +31,19 @@ TwoPredicate = (): boolean => {
   return this.isTwoAvailable;
 }
 
-AllIn:string[] = ['A', 'B'];
-
-one:string[] = [];
-
-two:string[] = [];
 
 
+one:IGame1[] = [];
+
+two:IGame1[] = [];
+
+AllIn:IGame1[] = GAME1;
 
 
 
-  drop(event: CdkDragDrop<string[]>) {
+
+
+  drop(event: CdkDragDrop<IGame1[]>) {
     if (event.previousContainer === event.container) {
       moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
     } else {
@@ -55,7 +59,9 @@ two:string[] = [];
   visinfo(){
 
 
-    if(this.one[0]=="A"&&this.two[0]=="B"){
+
+
+    if(this.one[0].game==1&&this.two[0].game==2){
       alert("true");
 
     }else{
