@@ -15,12 +15,12 @@ export const GAME1= [
         "content": "檢視開發狀況，並進行部分功能單元測試"
     },
     {
-        "game":4,
+        "game":1,
         "title":"Standup Meeting",
         "content": "進度彙報、請求支援"
     },
     {
-        "game":5,
+        "game":1,
         "title":"Standup Meeting",
         "content": "進度彙報、請求支援"
     },
