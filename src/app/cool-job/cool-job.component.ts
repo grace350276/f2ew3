@@ -13,7 +13,6 @@ import {
 } from '@angular/cdk/drag-drop';
 import { TemplatePortal } from '@angular/cdk/portal';
 import { Overlay, OverlayConfig, OverlayRef } from '@angular/cdk/overlay';
-
 @Component({
   selector: 'app-cool-job',
   templateUrl: './cool-job.component.html',
