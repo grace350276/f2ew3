@@ -13,17 +13,14 @@ import {
 } from '@angular/cdk/drag-drop';
 import { TemplatePortal } from '@angular/cdk/portal';
 import { Overlay, OverlayConfig, OverlayRef } from '@angular/cdk/overlay';
+import { RouterLink } from '@angular/router';
 @Component({
   selector: 'app-cool-job',
   templateUrl: './cool-job.component.html',
   styleUrls: ['./cool-job.component.scss'],
 })
 export class CoolJobComponent implements OnInit {
-  // overlayRef: any;
-  // tplRef: any;
-  // viewContainerRef: any;
-  // constructor() {}
-  // ngOnInit(): void {}
+  router: any;
 
 //拖曳cdk
   drop(event: CdkDragDrop<string[]>) {
@@ -66,9 +63,11 @@ export class CoolJobComponent implements OnInit {
 
   two: string[] = [];
 
-//overlay內的內容
-  @ViewChild('tpl') tplRef!: TemplateRef<ElementRef>;
+//overlay, portal設定
+  @ViewChild('tpl') tplRef!: TemplateRef<any>;
   overlayRef!: OverlayRef;
+
+  @ViewChild('tplFalse') tplFRef!: TemplateRef<any>;
 
   constructor(
     private overlay: Overlay,
@@ -94,22 +93,27 @@ export class CoolJobComponent implements OnInit {
     });
   }
 
-  // onClick() {
-  //   this.overlayRef.attach(
-  //     new TemplatePortal(this.tplRef, this.viewContainerRef)
-  //   );
-  // }
   onClose() {
     this.overlayRef.detach();
+  }
+  clickSuccess(){
+    this.router.navigateByUrl('/pd-backlog');
+  }
+
+  clickWrong(){
+    this.router.navigateByUrl('/intro');
   }
 
   visinfo() {
     if (this.one[0] == 'A' && this.two[0] == 'B') {
-      alert('true');
-    } else {
-      alert('false');
+      // alert('true');
       this.overlayRef.attach(
         new TemplatePortal(this.tplRef, this.viewContainerRef)
+      );
+    } else {
+      // alert('false');
+      this.overlayRef.attach(
+        new TemplatePortal(this.tplFRef, this.viewContainerRef)
       );
     }
   }
