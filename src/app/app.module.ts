@@ -6,6 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CdkDragDropConnectedSortingExampleCompComponent } from './cdk-drag-drop-connected-sorting-example/cdk-drag-drop-connected-sorting-example.component';
 import { DragDropModule } from '@angular/cdk/drag-drop';
+import {OverlayModule} from '@angular/cdk/overlay';
 import { CoolJobComponent } from './cool-job/cool-job.component';
 import { SimpleDragComponent } from './simple-drag/simple-drag.component';
 import { FormsModule } from '@angular/forms';
@@ -47,7 +48,8 @@ import { CoverPageComponent } from './cover-page/cover-page.component';
     AppRoutingModule,
     BrowserAnimationsModule,
     DragDropModule,
-    FormsModule
+    FormsModule,
+    OverlayModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
