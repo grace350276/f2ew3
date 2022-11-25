@@ -97,7 +97,7 @@ export class Page2WeekFlowComponent implements OnInit {
   }
 
   visinfo() {
-    if (this.one[0].game == 2 && this.five[0].game == 3&& this.six[0].game == 6) {
+    if (this.one[0].game == 2 && this.five[0].game == 3&& this.six[0].game == 6&& this.two[0].game == 1 && this.three[0].game == 1 && this.four[0].game == 1) {
       alert("true");
     } else {
       alert("false");
