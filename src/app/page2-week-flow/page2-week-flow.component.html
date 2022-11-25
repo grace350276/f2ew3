@@ -14,7 +14,7 @@
 
                 <div cdkDropList #oneList="cdkDropList" [cdkDropListData]="one"
                     [cdkDropListConnectedTo]="[AllInList,oneList,twoList,threeList,fourList,fiveList,sixList]" [cdkDropListEnterPredicate]="OnePredicate"
-                    class="coolJob-list " (cdkDropListDropped)="drop($event)">
+                    class="coolJob-list optionArea" (cdkDropListDropped)="drop($event)">
                     <div class="coolJob-box" *ngFor="let item of one" cdkDrag>
                         <h3>{{item.title}}</h3>
                         <p>{{item.content}}</p>
@@ -27,7 +27,7 @@
 
                 <div cdkDropList #twoList="cdkDropList" [cdkDropListData]="two"
                     [cdkDropListConnectedTo]="[AllInList,oneList,twoList,threeList,fourList,fiveList,sixList]" [cdkDropListEnterPredicate]="TwoPredicate"
-                    class="coolJob-list" (cdkDropListDropped)="drop($event)">
+                    class="coolJob-list optionArea" (cdkDropListDropped)="drop($event)">
                     <div class="coolJob-box" *ngFor="let item of two" cdkDrag> <h3>{{item.title}}</h3>
                         <p>{{item.content}}</p></div>
                 </div>
@@ -38,18 +38,18 @@
 
                 <div cdkDropList #threeList="cdkDropList" [cdkDropListData]="three"
                     [cdkDropListConnectedTo]="[AllInList,oneList,twoList,threeList,fourList,fiveList,sixList]" [cdkDropListEnterPredicate]="ThreePredicate"
-                    class="coolJob-list" (cdkDropListDropped)="drop($event)">
+                    class="coolJob-list optionArea" (cdkDropListDropped)="drop($event)">
                     <div class="coolJob-box" *ngFor="let item of three" cdkDrag> <h3>{{item.title}}</h3>
                         <p>{{item.content}}</p></div>
                 </div>
             </div>
 
-            <div class="fttingArea">
+            <div class="fttingArea ">
                 <p>Thursday</p>
 
                 <div cdkDropList #fourList="cdkDropList" [cdkDropListData]="four"
                     [cdkDropListConnectedTo]="[AllInList,oneList,twoList,threeList,fourList,fiveList,sixList]" [cdkDropListEnterPredicate]="FourPredicate"
-                    class="coolJob-list" (cdkDropListDropped)="drop($event)">
+                    class="coolJob-list optionArea" (cdkDropListDropped)="drop($event)">
                     <div class="coolJob-box" *ngFor="let item of four" cdkDrag> <h3>{{item.title}}</h3>
                         <p>{{item.content}}</p></div>
                 </div>
@@ -59,13 +59,13 @@
 
                 <div cdkDropList #fiveList="cdkDropList" [cdkDropListData]="five"
                     [cdkDropListConnectedTo]="[AllInList,oneList,twoList,threeList,fourList,fiveList,sixList]" [cdkDropListEnterPredicate]="FivePredicate"
-                    class="coolJob-list" (cdkDropListDropped)="drop($event)">
+                    class="coolJob-list optionArea" (cdkDropListDropped)="drop($event)">
                     <div class="coolJob-box" *ngFor="let item of five" cdkDrag> <h3>{{item.title}}</h3>
                         <p>{{item.content}}</p></div>
                 </div>
                 <div cdkDropList #sixList="cdkDropList" [cdkDropListData]="six"
                 [cdkDropListConnectedTo]="[AllInList,oneList,twoList,threeList,fourList,fiveList,sixList]" [cdkDropListEnterPredicate]="SixPredicate"
-                class="coolJob-list" (cdkDropListDropped)="drop($event)">
+                class="coolJob-list optionArea" (cdkDropListDropped)="drop($event)">
                 <div class="coolJob-box" *ngFor="let item of six" cdkDrag> <h3>{{item.title}}</h3>
                     <p>{{item.content}}</p></div>
             </div>
@@ -85,11 +85,9 @@
             請將下列會議按應該發生的順序拖曳至正確的時段～
         </p>
 
-        <div class="coolJob-container ">
-            <h2>ALL</h2>
-
+        <div >
             <div cdkDropList #AllInList="cdkDropList" [cdkDropListData]="AllIn"
-                [cdkDropListConnectedTo]="[oneList,twoList,threeList,fourList,fiveList,sixList]" class="coolJob-list" (cdkDropListDropped)="drop($event)">
+                [cdkDropListConnectedTo]="[oneList,twoList,threeList,fourList,fiveList,sixList]" class="optionArea week-wrap item-group" (cdkDropListDropped)="drop($event)">
                 <div class="coolJob-box" *ngFor="let item of AllIn" cdkDrag>
                     <h3>{{item.title}}</h3>
                     <p>{{item.content}}</p>
