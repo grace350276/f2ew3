@@ -8,24 +8,26 @@
     p:nth-child(1) {
       font-family: "M PLUS Rounded 1c";
       font-weight: 700;
-      font-size: 3.5rem;
+      font-size: 2.5rem;
       line-height: 40px;
     }
 
     p:nth-child(2) {
       font-family: "Noto Sans TC";
       font-weight: 300;
-      font-size: 2rem;
-        line-height: 46px;
+      font-size: 1.5rem;
+      line-height: 46px;
     }
 
     .btn-round {
       box-shadow: 0px 4px 8px rgba(255, 115, 0, 0.28);
       border-radius: 100px;
       padding: 16px 60px;
-      background: radial-gradient(104.16% 106.67% at 50% 0%,
-          #fe9b4b 0%,
-          #f47814 100%);
+      background: radial-gradient(
+        104.16% 106.67% at 50% 0%,
+        #fe9b4b 0%,
+        #f47814 100%
+      );
 
       font-size: 20px;
       font-family: "Noto Sans TC";
@@ -34,4 +36,9 @@
       color: #ffffff;
     }
   }
+}
+
+.container-anima {
+  width: 100%;
+  margin-left: auto;
 }

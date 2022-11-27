@@ -23,6 +23,15 @@ import { HeaderComponent } from './header/header.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { CoverPageComponent } from './cover-page/cover-page.component';
 
+// lottie
+import { LottieModule } from 'ngx-lottie';
+import player from 'lottie-web';
+// Note we need a separate function as it's required
+// by the AOT compiler.
+export function playerFactory() {
+  return player;
+}
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -49,6 +58,7 @@ import { CoverPageComponent } from './cover-page/cover-page.component';
     DragDropModule,
     FormsModule,
     OverlayModule,
+    [LottieModule.forRoot({ player: playerFactory })],
   ],
   providers: [],
   bootstrap: [AppComponent],

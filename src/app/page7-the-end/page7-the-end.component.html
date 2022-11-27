@@ -1,17 +1,22 @@
-
 <div class="container cover_txt_wrap">
   <div class="row align-items-md-stretch">
-      <div class="col-md-6 cover_txt_wrap-left">
-        <div class="h-100 p-5">
-          大衛動畫放在這
-        </div>
+    <div class="col-md-6 cover_txt_wrap-left">
+      <div class="container-anima">
+        <!-- 大衛動畫放在這 -->
+        <ng-lottie
+          [options]="options"
+          (animationCreated)="animationCreated($event)"
+        ></ng-lottie>
       </div>
-      <div class="col-md-6 cover_txt_wrap-right">
-        <div class="h-100">
-          <p class="mb-3">恭喜你也熟 SCRUM 了 </p>
-          <p class="mb-3">下次老闆問的時候請說我超熟！</p>
-          <button routerLink="/" class="btn btn-round" type="button">再玩一次</button>
-        </div>
+    </div>
+    <div class="col-md-6 cover_txt_wrap-right">
+      <div class="h-100">
+        <p class="mb-3">恭喜你也熟 SCRUM 了</p>
+        <p class="mb-3">下次老闆問的時候請說我超熟！</p>
+        <button routerLink="/" class="btn btn-round" type="button">
+          再玩一次
+        </button>
       </div>
     </div>
   </div>
+</div>
