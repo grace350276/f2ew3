@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Overlay, OverlayConfig, OverlayRef } from '@angular/cdk/overlay';
+import { Component, OnInit, TemplateRef, ViewChild, ViewContainerRef } from '@angular/core';
 import * as $ from 'jquery';
 
 @Component({
@@ -7,9 +8,48 @@ import * as $ from 'jquery';
   styleUrls: ['./page6-retro-game.component.scss'],
 })
 export class Page6RetroGameComponent implements OnInit {
-  constructor() { }
+   router: any;
 
-  ngOnInit(): void { }
+  @ViewChild('tpl') tplRef!: TemplateRef<any>;
+  overlayRef!: OverlayRef;
+
+  @ViewChild('tplFalse') tplFRef!: TemplateRef<any>;
+
+  constructor(
+    private overlay: Overlay,
+    private viewContainerRef: ViewContainerRef
+  ) {}
+
+  ngOnInit(): void {
+    // 設定彈窗出來時的定位
+    const strategy = this.overlay
+      .position()
+      .global()
+      .centerHorizontally()
+      .centerVertically();
+
+    const configs = new OverlayConfig({
+      hasBackdrop: true,
+      positionStrategy: strategy,
+    });
+
+    this.overlayRef = this.overlay.create(configs);
+    this.overlayRef.backdropClick().subscribe(() => {
+      this.overlayRef.detach();
+    });
+  }
+
+
+  onClose() {
+    this.overlayRef.detach();
+  }
+  clickSuccess(){
+    this.router.navigateByUrl('/pd-backlog');
+  }
+
+  clickWrong(){
+    this.router.navigateByUrl('/intro');
+  }
 
   sendMsg = ():void =>
 

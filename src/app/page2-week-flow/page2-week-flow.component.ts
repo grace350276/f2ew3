@@ -25,7 +25,7 @@ import { RouterLink } from '@angular/router';
 export class Page2WeekFlowComponent implements OnInit {
 
   router: any;
-  
+
   @ViewChild('tpl') tplRef!: TemplateRef<any>;
   overlayRef!: OverlayRef;
 
@@ -53,12 +53,6 @@ export class Page2WeekFlowComponent implements OnInit {
     this.overlayRef.backdropClick().subscribe(() => {
       this.overlayRef.detach();
     });
-
-   
-
-    
-
-
   }
 
 
@@ -128,7 +122,7 @@ export class Page2WeekFlowComponent implements OnInit {
     return this.isSixAvailable;
   };
 
-  
+
 
 
 
@@ -163,7 +157,7 @@ export class Page2WeekFlowComponent implements OnInit {
 
   visinfo() {
     if (this.one.length==0 || this.five.length==0 || this.six.length==0 || this.two.length==0 || this.three.length==0 || this.four.length==0 ) {
-      
+
 
 
       this.overlayRef.attach(
@@ -187,6 +181,6 @@ export class Page2WeekFlowComponent implements OnInit {
 
 
 
-  
+
 }}
 
