@@ -128,7 +128,7 @@ export class Page4PdFlowComponent implements OnInit {
     
     if (this.one.length==0 || this.two.length==0 || this.three.length==0 ) {
       
-      alert("false");
+     
 
       this.overlayRef.attach(
         new TemplatePortal(this.tplFRef, this.viewContainerRef)
@@ -137,14 +137,14 @@ export class Page4PdFlowComponent implements OnInit {
       this.overlayRef.attach(
         new TemplatePortal(this.tplFRef, this.viewContainerRef)
       );
-    } else if (this.one[0].game == 3 || this.two[0].game == 2 && this.three[0].game == 1) {
-      alert("true");
+    } else if (this.one[0].game == 1 || this.two[0].game == 3 && this.three[0].game == 2) {
+    
 
       this.overlayRef.attach(
         new TemplatePortal(this.tplRef, this.viewContainerRef)
       );
     } else {
-      alert("false");
+   
 
       this.overlayRef.attach(
         new TemplatePortal(this.tplFRef, this.viewContainerRef)
