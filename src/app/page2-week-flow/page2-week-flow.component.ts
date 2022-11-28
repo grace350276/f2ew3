@@ -15,7 +15,6 @@ import { G1, G2, G3, G4, G5, G6, GAME1 } from "../shared/page2game";
 import { IGame1 } from "../shared/IPage2game";
 import { TemplatePortal } from '@angular/cdk/portal';
 import { Overlay, OverlayConfig, OverlayRef } from '@angular/cdk/overlay';
-import { RouterLink } from '@angular/router';
 
 @Component({
   selector: "app-page2-week-flow",
@@ -146,14 +145,6 @@ export class Page2WeekFlowComponent implements OnInit {
   onClose() {
     this.overlayRef.detach();
   }
-  clickSuccess(){
-    this.router.navigateByUrl('/pd-backlog');
-  }
-
-  clickWrong(){
-    this.router.navigateByUrl('/intro');
-  }
-
 
   visinfo() {
     if (this.one.length==0 || this.five.length==0 || this.six.length==0 || this.two.length==0 || this.three.length==0 || this.four.length==0 ) {
@@ -176,11 +167,6 @@ export class Page2WeekFlowComponent implements OnInit {
       new TemplatePortal(this.tplFRef, this.viewContainerRef)
     );
   }
-
-
-
-
-
 
 }}
 

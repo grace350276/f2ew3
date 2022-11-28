@@ -32,7 +32,7 @@ import { Z1, Z2, Z3 } from '../shared/page2game';
 export class Page4PdFlowComponent implements OnInit {
 
   router: any;
-  
+
   @ViewChild('tpl') tplRef!: TemplateRef<any>;
   overlayRef!: OverlayRef;
 
@@ -86,7 +86,7 @@ export class Page4PdFlowComponent implements OnInit {
     return this.isThreeAvailable;
   };
 
-  
+
   one: IGame1[] = Z1;
 
   two: IGame1[] = Z2;
@@ -112,23 +112,11 @@ export class Page4PdFlowComponent implements OnInit {
     }
   }
 
-  onClose() {
-    this.overlayRef.detach();
-  }
-  clickSuccess(){
-    this.router.navigateByUrl('/pd-backlog');
-  }
-
-  clickWrong(){
-    this.router.navigateByUrl('/intro');
-  }
-
-
   visinfo() {
-    
+
     if (this.one.length==0 || this.two.length==0 || this.three.length==0 ) {
-      
-     
+
+
 
       this.overlayRef.attach(
         new TemplatePortal(this.tplFRef, this.viewContainerRef)
@@ -138,13 +126,13 @@ export class Page4PdFlowComponent implements OnInit {
         new TemplatePortal(this.tplFRef, this.viewContainerRef)
       );
     } else if (this.one[0].game == 1 || this.two[0].game == 3 && this.three[0].game == 2) {
-    
+
 
       this.overlayRef.attach(
         new TemplatePortal(this.tplRef, this.viewContainerRef)
       );
     } else {
-   
+
 
       this.overlayRef.attach(
         new TemplatePortal(this.tplFRef, this.viewContainerRef)

@@ -1,5 +1,13 @@
 import { Overlay, OverlayConfig, OverlayRef } from '@angular/cdk/overlay';
-import { Component, OnInit, TemplateRef, ViewChild, ViewContainerRef } from '@angular/core';
+import { TemplatePortal } from '@angular/cdk/portal';
+import {
+  Component,
+  OnInit,
+  TemplateRef,
+  ViewChild,
+  ViewContainerRef,
+} from '@angular/core';
+
 import * as $ from 'jquery';
 
 @Component({
@@ -8,7 +16,7 @@ import * as $ from 'jquery';
   styleUrls: ['./page6-retro-game.component.scss'],
 })
 export class Page6RetroGameComponent implements OnInit {
-   router: any;
+  router: any;
 
   @ViewChild('tpl') tplRef!: TemplateRef<any>;
   overlayRef!: OverlayRef;
@@ -39,30 +47,34 @@ export class Page6RetroGameComponent implements OnInit {
     });
   }
 
+  // visinfo() {
 
-  onClose() {
-    this.overlayRef.detach();
-  }
-  clickSuccess(){
-    this.router.navigateByUrl('/pd-backlog');
-  }
+  //     this.overlayRef.attach(
+  //       new TemplatePortal(this.tplRef, this.viewContainerRef)
+  //     )
+  // };
 
-  clickWrong(){
-    this.router.navigateByUrl('/intro');
-  }
 
-  sendMsg = ():void =>
+  visinfo() {
 
-    { const singleSize = $("[name = single]").length;
+    // 正解 $('#place1').attr('checked') === undefined
+    // 正解 $('#place2').prop('checked') === true
+    // 正解 $('.checkBox3').attr('#place3') === undefined
+    // 正解 $('#place4').prop('checked') === true
 
-    const answerArr = new Array(singleSize);
+    if ($('#place1').attr('checked') === undefined &&  $('#place2').prop('checked') === true  &&  $('.checkBox3').attr('#place3') === undefined &&  $('#place4').prop('checked') === true )
+    {
+        this.overlayRef.attach(
+        new TemplatePortal(this.tplRef, this.viewContainerRef)
+      );
+    }
+    else
+    {
+        this.overlayRef.attach(
+        new TemplatePortal(this.tplFRef, this.viewContainerRef)
+      );
 
-    $("[name ='single']").each(function (index) {
-      // const answer = $("input[name='place" + (index + 1) + "']:checked".val();
-      // answerArr[index] = answer;
-  });
+    }
 
-  // anwserArr [index+singleSize] = singleAnswer;
-
-  }
-  }
+  };
+}
