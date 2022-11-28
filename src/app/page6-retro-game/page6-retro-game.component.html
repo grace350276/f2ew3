@@ -5,15 +5,16 @@
     <div class="mb-5 round-1">
       <p class="mb-4">做得好的地方</p>
       <div class="doingbetter_card_wrap">
-        <label class="doingbetter_card" id="op1">
-          <input name="plan" class="radio" type="radio" for="op1" checked />
+        <label class="doingbetter_card" for="place1" name="single" >
+
+          <input name="op1" id="place1" class="radio" type="radio"  />
           <span class="plan-details">
             <span class="plan-type">這次我幫了很多人救火耶</span>
           </span>
         </label>
 
-        <label class="doingbetter_card" id="op2">
-          <input name="plan" class="radio" type="radio" for="op2" />
+        <label class="doingbetter_card" for="place1" name="single">
+          <input name="op1" class="radio" id="place1" type="radio" checked="checked" />
           <span class="plan-details" aria-hidden="true">
             <span class="plan-type"
               >大家在開發上都會互相 cover，讓進度如期完成！</span
@@ -25,8 +26,8 @@
     <div class="mb-5 round-2">
       <p class="mb-3">有哪些可以做得更好</p>
       <div class="doingbetter_card_wrap">
-        <label class="doingbetter_card" id="op3">
-          <input name="plan" class="radio" type="radio" for="op3" checked />
+        <label class="doingbetter_card" for="place2" name="single">
+          <input name="op2" class="radio" id="place2" type="radio" />
           <span class="plan-details">
             <span class="plan-type"
               >開發時間拿捏不準確，都是設計出稿出太慢...</span
@@ -34,9 +35,9 @@
           </span>
         </label>
 
-        <label class="doingbetter_card">
-          <input name="plan" class="radio" type="radio" id="op4" />
-          <span class="plan-details" aria-hidden="true" for="op4">
+        <label class="doingbetter_card" for="place2" name="single">
+          <input name="op2" class="radio" id="place2" type="radio" checked="checked"/>
+          <span class="plan-details" aria-hidden="true">
             <span class="plan-type"
               >可以記錄這次的開發時間，讓下次協作的時候，可以作為預估deadline的依據！</span
             >
@@ -46,12 +47,14 @@
     </div>
     <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
       <button
-        routerLink="/the-end"
+
         type="button"
         class="btn btn-outline-secondary px-4"
+        onclick="sendMsg()"
       >
         驗收觀念
       </button>
     </div>
   </div>
 </div>
+<!-- routerLink="/the-end" -->
