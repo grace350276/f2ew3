@@ -1,4 +1,11 @@
-import { Component , OnInit} from '@angular/core';
+import {
+  Component,
+  ElementRef,
+  OnInit,
+  TemplateRef,
+  ViewChild,
+  ViewContainerRef,
+} from '@angular/core';
 
 import {
   CdkDragDrop,
@@ -11,6 +18,11 @@ import {
 import { GAME2 } from '../shared/page4game';
 import { IGame1 } from "../shared/IPage2game";
 
+import { TemplatePortal } from '@angular/cdk/portal';
+import { Overlay, OverlayConfig, OverlayRef } from '@angular/cdk/overlay';
+import { RouterLink } from '@angular/router';
+import { Z1, Z2, Z3 } from '../shared/page2game';
+
 
 @Component({
   selector: 'app-page4-pd-flow',
@@ -19,9 +31,36 @@ import { IGame1 } from "../shared/IPage2game";
 })
 export class Page4PdFlowComponent implements OnInit {
 
-  constructor() {}
+  router: any;
+  
+  @ViewChild('tpl') tplRef!: TemplateRef<any>;
+  overlayRef!: OverlayRef;
 
-  ngOnInit(): void {}
+  @ViewChild('tplFalse') tplFRef!: TemplateRef<any>;
+
+  constructor(
+    private overlay: Overlay,
+    private viewContainerRef: ViewContainerRef
+  ) {}
+
+  ngOnInit(): void {
+    // 設定彈窗出來時的定位
+    const strategy = this.overlay
+      .position()
+      .global()
+      .centerHorizontally()
+      .centerVertically();
+
+    const configs = new OverlayConfig({
+      hasBackdrop: true,
+      positionStrategy: strategy,
+    });
+
+    this.overlayRef = this.overlay.create(configs);
+    this.overlayRef.backdropClick().subscribe(() => {
+      this.overlayRef.detach();
+    });
+  }
 
   get isOneAvailable(): boolean {
     return this.one && this.one.length < 1;
@@ -47,41 +86,12 @@ export class Page4PdFlowComponent implements OnInit {
     return this.isThreeAvailable;
   };
 
-  get isFourAvailable(): boolean {
-    return this.four && this.four.length < 1;
-  }
+  
+  one: IGame1[] = Z1;
 
-  FourPredicate = (): boolean => {
-    return this.isFourAvailable;
-  };
+  two: IGame1[] = Z2;
 
-  get isFiveAvailable(): boolean {
-    return this.five && this.five.length < 1;
-  }
-
-  FivePredicate = (): boolean => {
-    return this.isFiveAvailable;
-  };
-
-    get isSixAvailable(): boolean {
-    return this.six && this.six.length < 1;
-  }
-
-  SixPredicate = (): boolean => {
-    return this.isSixAvailable;
-  };
-
-  one: IGame1[] = [];
-
-  two: IGame1[] = [];
-
-  three: IGame1[] = [];
-
-  four: IGame1[] = [];
-
-  five: IGame1[] = [];
-
-  six: IGame1[] = [];
+  three: IGame1[] = Z3;
 
   AllIn: IGame1[] = GAME2;
 
@@ -102,11 +112,43 @@ export class Page4PdFlowComponent implements OnInit {
     }
   }
 
+  onClose() {
+    this.overlayRef.detach();
+  }
+  clickSuccess(){
+    this.router.navigateByUrl('/pd-backlog');
+  }
+
+  clickWrong(){
+    this.router.navigateByUrl('/intro');
+  }
+
+
   visinfo() {
-    if (this.one[0].game == 2 && this.five[0].game == 3&& this.six[0].game == 6&& this.two[0].game == 1 && this.three[0].game == 1 && this.four[0].game == 1) {
+    
+    if (this.one.length==0 || this.two.length==0 || this.three.length==0 ) {
+      
+      alert("false");
+
+      this.overlayRef.attach(
+        new TemplatePortal(this.tplFRef, this.viewContainerRef)
+      );
+
+      this.overlayRef.attach(
+        new TemplatePortal(this.tplFRef, this.viewContainerRef)
+      );
+    } else if (this.one[0].game == 3 || this.two[0].game == 2 && this.three[0].game == 1) {
       alert("true");
+
+      this.overlayRef.attach(
+        new TemplatePortal(this.tplRef, this.viewContainerRef)
+      );
     } else {
       alert("false");
+
+      this.overlayRef.attach(
+        new TemplatePortal(this.tplFRef, this.viewContainerRef)
+      );
     }
   }
 

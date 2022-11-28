@@ -31,3 +31,21 @@ export const GAME1= [
     }
   
   ]
+
+  export const G1= [];
+
+  export const G2= [];
+
+  export const G4= [];
+
+  export const G3= [];
+
+  export const G5= [];
+
+  export const G6= [];
+
+  export const Z1= [];
+
+  export const Z2= [];
+  
+  export const Z3= [];
