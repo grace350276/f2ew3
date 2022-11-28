@@ -64,6 +64,7 @@ export class Page6RetroGameComponent implements OnInit {
 
     if ($('#place1').attr('checked') === undefined &&  $('#place2').prop('checked') === true  &&  $('.checkBox3').attr('#place3') === undefined &&  $('#place4').prop('checked') === true )
     {
+      // true
         this.overlayRef.attach(
         new TemplatePortal(this.tplRef, this.viewContainerRef)
       );
