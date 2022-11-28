@@ -47,14 +47,6 @@ export class Page6RetroGameComponent implements OnInit {
     });
   }
 
-  // visinfo() {
-
-  //     this.overlayRef.attach(
-  //       new TemplatePortal(this.tplRef, this.viewContainerRef)
-  //     )
-  // };
-
-
   visinfo() {
 
     // 正解 $('#place1').attr('checked') === undefined

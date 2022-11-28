@@ -6,14 +6,22 @@
       <p class="mb-4">做得好的地方</p>
       <div class="doingbetter_card_wrap">
         <label class="doingbetter_card" for="place1">
-          <input id="place1" name="op1" value="0" class="radio" type="radio"  />
+          <input id="place1" name="op1" class="radio" type="radio" />
+
           <span class="plan-details">
             <span class="plan-type">這次我幫了很多人救火耶</span>
           </span>
         </label>
 
         <label class="doingbetter_card" for="place1">
-          <input id="place2" name="op1" value="1" class="radio" type="radio" checked="true"/>
+          <input
+            id="place2"
+            name="op1"
+            class="radio"
+            type="radio"
+            checked="true"
+          />
+
           <span class="plan-details" aria-hidden="true">
             <span class="plan-type"
               >大家在開發上都會互相 cover，讓進度如期完成！</span
@@ -26,7 +34,7 @@
     <div class="mb-5 round-2">
       <p class="mb-3">有哪些可以做得更好</p>
       <div class="doingbetter_card_wrap">
-        <label class="doingbetter_card" for="place2" name="single">
+        <label class="doingbetter_card" for="place3" >
           <input name="op2" class="radio" id="place3" type="radio" />
           <span class="plan-details">
             <span class="plan-type"
@@ -71,11 +79,11 @@
     </button>
   </div>
 </ng-template>
-  <ng-template #tplFalse>
-    <div class="overlaybox px-4 py-4">
-      <img class="my-5" src="assets/images/wrong_icon.svg" alt="" />
-      <button type="button" class="d-flex btn btn-outline-secondary px-5">
-        <a routerLink="/retro">再看一次觀念</a>
-      </button>
-    </div>
-  </ng-template>
+<ng-template #tplFalse>
+  <div class="overlaybox px-4 py-4">
+    <img class="my-5" src="assets/images/wrong_icon.svg" alt="" />
+    <button type="button" class="d-flex btn btn-outline-secondary px-5">
+      <a routerLink="/retro">再看一次觀念</a>
+    </button>
+  </div>
+</ng-template>
