@@ -59,10 +59,10 @@ export class Page6RetroGameComponent implements OnInit {
 
     // 正解 $('#place1').attr('checked') === undefined
     // 正解 $('#place2').prop('checked') === true
-    // 正解 $('.checkBox3').attr('#place3') === undefined
+    // 正解 $('#place3').attr('#place3') === undefined
     // 正解 $('#place4').prop('checked') === true
 
-    if ($('#place1').attr('checked') === undefined &&  $('#place2').prop('checked') === true  &&  $('.checkBox3').attr('#place3') === undefined &&  $('#place4').prop('checked') === true )
+    if ($('#place1').attr('checked') === undefined &&  $('#place2').prop('checked') === true  &&  $('#place3').attr('checked') === undefined &&  $('#place4').prop('checked') === true )
     {
       // true
         this.overlayRef.attach(
