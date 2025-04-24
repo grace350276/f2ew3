@@ -1,0 +1,70 @@
+.mainArea {
+  background: rgba(255, 255, 255, 0.8);
+  box-shadow: 0px 15px 25px rgba(45, 156, 219, 0.16);
+  font-family: "Noto Sans TC";
+  color: #59597c;
+  border-radius: 8px;
+
+  p:nth-child(1) {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 32px;
+  }
+
+  p:nth-child(2) {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 28px;
+  }
+
+  .participant_card_wrap {
+    div:nth-child(1) {
+      padding: 1.5rem 1rem;
+      background: rgba(216, 216, 216, 0.74);
+      border-radius: 8px;
+    }
+    p {
+      color: #ffffff;
+      font-family: "Noto Sans TC";
+      line-height: 24px;
+      text-align: center;
+    }
+
+    p:nth-child(1) {
+      font-weight: 700;
+      font-size: 1rem;
+    }
+
+    p:nth-child(2) {
+      font-weight: 400;
+      font-size: 12px;
+    }
+    img {
+      padding-left: 10px;
+      padding-right: 20px;
+      height: 3rem;
+      width: auto;
+    }
+  }
+
+  .text_wrap {
+    p {
+      font-family: "Noto Sans TC";
+      font-style: normal;
+      line-height: 24px;
+    }
+
+    p:nth-child(1) {
+      font-weight: 700;
+      font-size: 16px;
+      color: #676767;
+    }
+
+    p:nth-child(2) {
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 24px;
+      color: #676767;
+    }
+  }
+}

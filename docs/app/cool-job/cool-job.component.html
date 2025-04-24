@@ -1,0 +1,70 @@
+<div class="middle-line"></div>
+<h1>cool-job works!</h1>
+
+<div class="coolJob-container">
+  <h2>ALL</h2>
+
+  <div
+    cdkDropList
+    #AllInList="cdkDropList"
+    [cdkDropListData]="AllIn"
+    [cdkDropListConnectedTo]="[oneList, twoList]"
+    class="coolJob-list"
+    (cdkDropListDropped)="drop($event)"
+  >
+    <div class="coolJob-box" *ngFor="let item of AllIn" cdkDrag>{{ item }}</div>
+  </div>
+</div>
+
+<div class="coolJob-container">
+  <h2>一</h2>
+
+  <div
+    cdkDropList
+    #oneList="cdkDropList"
+    [cdkDropListData]="one"
+    [cdkDropListConnectedTo]="[AllInList, twoList]"
+    [cdkDropListEnterPredicate]="OnePredicate"
+    class="coolJob-list"
+    (cdkDropListDropped)="drop($event)"
+  >
+    <div class="coolJob-box" *ngFor="let item of one" cdkDrag>{{ item }}</div>
+  </div>
+</div>
+
+<div class="coolJob-container">
+  <h2>二</h2>
+
+  <div
+    cdkDropList
+    #twoList="cdkDropList"
+    [cdkDropListData]="two"
+    [cdkDropListConnectedTo]="[oneList, AllInList]"
+    [cdkDropListEnterPredicate]="TwoPredicate"
+    class="coolJob-list"
+    (cdkDropListDropped)="drop($event)"
+  >
+    <div class="coolJob-box" *ngFor="let item of two" cdkDrag>{{ item }}</div>
+  </div>
+</div>
+
+<!-- <button (click)="onClick()" >顯示資料</button> -->
+<button (click)="visinfo()">顯示資料</button>
+
+<ng-template #tpl>
+  <div class="overlaybox px-4 py-4">
+    <img class="my-5" src="./assets/images/correct_icon.svg" alt="" />
+    <button type="button" class="d-flex btn btn-outline-secondary px-5">
+      <a routerLink="/pd-backlog">恭喜技能 GET！</a>
+    </button>
+  </div>
+</ng-template>
+
+<ng-template #tplFalse>
+  <div class="overlaybox px-4 py-4">
+    <img class="my-5" src="assets/images/wrong_icon.svg" alt="" />
+    <button type="button" class="d-flex btn btn-outline-secondary px-5">
+      <a routerLink="/week-flow">再看一次觀念</a>
+    </button>
+  </div>
+</ng-template>
