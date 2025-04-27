@@ -143,8 +143,27 @@ body {
 }
 
 
+
+.card_intro{
+  display: flex;
+  margin-left: 1.5rem;
+}
+
+div > .card_intro:last-child {
+  margin-right: 1.5rem;
+}
+
 .participant_card_wrap{
-  div{
-    display:flex;
+  @media (max-width:992px){
+    flex-direction: column;
+
+    .card_intro{
+      margin: 1.5rem;
+      margin-bottom: 0rem;
+
+      width: calc(100% - 3rem);
+    }
+
   }
 }
+

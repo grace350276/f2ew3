@@ -19,6 +19,12 @@ $font_nav: "M PLUS Rounded 1c", sans-serif;
       border-radius: 8px;
       padding: 1.5rem 1rem;
 
+      @media (max-width:768px){
+        .col{
+          color:#32acbd;
+        }
+      }
+
       p {
         color: #ffffff;
         font-family: "Noto Sans TC";
