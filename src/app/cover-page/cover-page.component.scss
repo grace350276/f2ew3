@@ -1,14 +1,28 @@
+@use 'src/scss/abstracts/function' as fn;
+
 .cover_txt_wrap {
   margin-top: 10%;
   .cover_txt_wrap-right {
-    margin-top: 7.25rem;
+    display: flex;
+    align-items: center;
     color: #59597c;
+
+    @media (max-width: 767px) {
+      margin-top: -2rem;
+      justify-content: center;
+    }
 
     p:nth-child(1) {
       font-family: "M PLUS Rounded 1c";
       font-weight: 700;
       font-size: 3.5rem;
       line-height: 40px;
+
+      @media (max-width: 450px) {
+        font-size: fn.rem2vw(3.5,450);
+        line-height: fn.px2vw(40,450);
+        text-align: center;
+      }
     }
 
     p:nth-child(2) {
@@ -16,6 +30,12 @@
       font-weight: 300;
       font-size: 2rem;
       line-height: 46px;
+
+      @media (max-width: 450px) {
+        font-size: fn.rem2vw(2,450);
+        line-height: fn.px2vw(46,450);
+        text-align: center;
+      }
     }
 
     .btn-round {

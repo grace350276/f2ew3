@@ -1,0 +1,11 @@
+@function px2vw($target, $target-width) {
+  $vw-context: $target-width * 0.01; // 移除 1px，不加單位
+  @return ($target / $vw-context) * 1vw;
+}
+
+
+@function rem2vw($target-rem, $design-width, $base-font-size: 16) {
+  $target-px: $target-rem * $base-font-size;
+  $vw-context: $design-width * 0.01;
+  @return ($target-px / $vw-context) * 1vw;
+}

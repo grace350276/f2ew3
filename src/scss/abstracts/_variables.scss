@@ -1,3 +1,20 @@
+// $isDev: true;
+$isDev: false;
+@if $isDev {
+  * {
+    outline: 1px solid red;
+    // pointer-events: auto !important;
+    &:before {
+      outline: 1px solid green;
+    }
+    &:after {
+      outline: 1px solid blue;
+    }
+  }
+}
+
+
+
 // font
 
 $font:  "Noto Sans TC";

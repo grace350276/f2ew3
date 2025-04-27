@@ -1,15 +1,38 @@
+@use 'src/scss/abstracts/function' as fn;
+
 .cover_txt_wrap {
   margin-top: 10%;
 
   .cover_txt_wrap-right {
-    margin-top: 7.25rem;
+    display: flex;
+    align-items: center;
     color: #59597c;
+
+    @media (max-width: 767px) {
+      margin-top: -2rem;
+      justify-content: center;
+    }
 
     p:nth-child(1) {
       font-family: "M PLUS Rounded 1c";
       font-weight: 700;
       font-size: 2.5rem;
       line-height: 40px;
+
+      // 不是很喜歡寫這麼多斷點 如果重新開始規劃不會這樣寫
+
+      @media (max-width: 992px) {
+        font-size: 2.1rem;
+      }
+
+      @media (max-width: 768px) {
+        font-size: 2.5rem;
+      }      
+
+      @media (max-width: 450px) {
+        font-size: fn.rem2vw(2.5,450);
+        line-height: fn.px2vw(40,450);
+      }
     }
 
     p:nth-child(2) {
@@ -17,6 +40,11 @@
       font-weight: 300;
       font-size: 1.5rem;
       line-height: 46px;
+
+      @media (max-width: 450px) {
+        font-size: fn.rem2vw(1.5,450);
+        line-height: fn.px2vw(46,450);
+      }
     }
 
     .btn-round {

@@ -1,7 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
 
+@charset "UTF-8";
+
 @import "./reset";
-@import "./variables";
+@import "./abstracts/variables";
+@import "./abstracts/function";
+@import "./abstracts/mixins";
+
 @import "./public";
 @import "./gameBox";
 @import '@angular/cdk/overlay-prebuilt.css';
