@@ -1,13 +1,14 @@
 
 ## 作品說明
 The F2E 2022 - 潮Scrum
-Demo https://natanryuu.github.io/f2ew3/
+Demo https://grace350276.github.io/f2ew3/
 
 
 ## 系統說明
 1.npm install
 2.ng serve
 3.再瀏覽器開啟 http://localhost:4200/
+
 ## 資料夾說明
 .angular
 .vscode

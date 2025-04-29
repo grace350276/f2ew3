@@ -14,6 +14,10 @@
     cursor: move;
     max-width: 300px;
     font-size: 14px;
+
+    @media (max-width: 768px){
+      padding: 5px;
+    }
   }
   
   .cdk-drag-preview {
@@ -67,12 +71,20 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    
+
+    @media (max-width: 768px){
+      align-items: flex-start;
+    }
 
 
     p{
       font-size: 0.85rem;
       margin-bottom: 2px;
+      @media (max-width: 768px){
+        font-size: 0.7rem;
+        margin-bottom: 0.5px;
+        line-height: 1.3rem;
+      }
     }
 
 
@@ -86,15 +98,23 @@
     }
 }
 
+.week-wrap-box{
+  display: flex;
+  flex-direction: column;
+
+  @media (max-width: 768px){
+    flex-direction: row;
+  }
+}
+
 
 .week-wrap{
     display:flex;
     flex-wrap: wrap;
     justify-content: center;
-
-
-
-
+    @media (max-width: 768px){
+      display: block;
+    }
 }
 
 

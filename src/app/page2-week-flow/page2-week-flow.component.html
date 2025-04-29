@@ -1,11 +1,14 @@
 <div class="container">
-  <div class="step2_testArea mx-5 px-4 py-4 my-5">
+  <div class="step2_testArea mainArea">
     <p class="mb-3">流程拼拼大風吹</p>
     <p class="mb-5">
       尊榮旅遊社即將推行線上下單業務，並採取 Scrum 開發模式，身為 Scrum Ｍaster
       請協助為該公司第一個為期一週的 Sprint 安排流程～
     </p>
 
+    <p class="mb-5 d-block d-md-none">請將下列會議按應該發生的順序拖曳至正確的時段～</p>
+
+    <div class="week-wrap-box">
     <div class="week-wrap">
       <div class="fttingArea">
         <p>Monday</p>
@@ -29,7 +32,7 @@
         >
           <div class="coolJob-box" *ngFor="let item of one" cdkDrag>
             <h3>{{ item.title }}</h3>
-            <p>{{ item.content }}</p>
+            <p class="d-none d-md-block">{{ item.content }}</p>
           </div>
         </div>
       </div>
@@ -56,7 +59,7 @@
         >
           <div class="coolJob-box" *ngFor="let item of two" cdkDrag>
             <h3>{{ item.title }}</h3>
-            <p>{{ item.content }}</p>
+            <p class="d-none d-md-block">{{ item.content }}</p>
           </div>
         </div>
       </div>
@@ -83,7 +86,7 @@
         >
           <div class="coolJob-box" *ngFor="let item of three" cdkDrag>
             <h3>{{ item.title }}</h3>
-            <p>{{ item.content }}</p>
+            <p class="d-none d-md-block">{{ item.content }}</p>
           </div>
         </div>
       </div>
@@ -110,7 +113,7 @@
         >
           <div class="coolJob-box" *ngFor="let item of four" cdkDrag>
             <h3>{{ item.title }}</h3>
-            <p>{{ item.content }}</p>
+            <p class="d-none d-md-block">{{ item.content }}</p>
           </div>
         </div>
       </div>
@@ -136,7 +139,7 @@
         >
           <div class="coolJob-box" *ngFor="let item of five" cdkDrag>
             <h3>{{ item.title }}</h3>
-            <p>{{ item.content }}</p>
+            <p class="d-none d-md-block">{{ item.content }}</p>
           </div>
         </div>
         <div
@@ -158,13 +161,13 @@
         >
           <div class="coolJob-box" *ngFor="let item of six" cdkDrag>
             <h3>{{ item.title }}</h3>
-            <p>{{ item.content }}</p>
+            <p class="d-none d-md-block">{{ item.content }}</p>
           </div>
         </div>
       </div>
     </div>
 
-    <p class="mb-5">請將下列會議按應該發生的順序拖曳至正確的時段～</p>
+    <p class="mb-5 d-none d-md-block">請將下列會議按應該發生的順序拖曳至正確的時段～</p>
 
     <div>
       <div
@@ -188,6 +191,8 @@
         </div>
       </div>
     </div>
+
+  </div>
 
     <!-- 按鈕 -->
     <div class="mb-3">
